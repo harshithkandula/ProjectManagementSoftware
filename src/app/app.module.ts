@@ -8,14 +8,17 @@ import { MeetingsComponent } from './meetings/meetings.component';
 import { MeetingsmanagementComponent } from './meetingsmanagement/meetingsmanagement.component';
 import { ClientService } from './client.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Router, RouterModule, provideRouter, withComponentInputBinding } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { routes } from './app.routes';
 
 
 
 @NgModule({
     declarations: [AppComponent, ClientComponent, WebmenuComponent, ClientmanagementComponent, MeetingsComponent, MeetingsmanagementComponent],
-    providers:[ClientService],
-    imports: [AppComponent, ClientComponent, WebmenuComponent, ClientmanagementComponent, MeetingsComponent, MeetingsmanagementComponent, FormsModule, ReactiveFormsModule],
-    exports:[],
+    providers:[ClientService, provideRouter(routes, withComponentInputBinding())],
+    imports: [AppComponent, ClientComponent, WebmenuComponent, ClientmanagementComponent, MeetingsComponent, MeetingsmanagementComponent, FormsModule, ReactiveFormsModule, BrowserModule, HttpClientModule, RouterModule.forRoot(routes)],
+    exports:[RouterModule],
     bootstrap: []
 })
 export class AppModule { }

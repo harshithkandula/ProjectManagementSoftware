@@ -37,6 +37,6 @@ export class MeetingsComponent {
   }
 
   addMeeting(): void{
-    this.meetingsService.addMeeting(this.meetingForm.value.clientName, this.meetingForm.value.meetingType, this.meetingForm.value.date, this.meetingForm.value.time, "", "");
+    this.meetingsService.addMeeting(this.meetingForm.value.clientName, this.meetingForm.value.meetingType, this.meetingForm.value.date, this.meetingForm.value.time);
   }
 }

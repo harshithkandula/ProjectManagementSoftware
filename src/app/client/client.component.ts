@@ -22,12 +22,12 @@ export class ClientComponent {
       {
         clientName: ['',[Validators.required, Validators.minLength(2), Validators.pattern(/\d+$/g)]],
         operatingSectors: ['',[Validators.required]],
-        headQuarters: ['',[Validators.required, Validators.minLength(2), Validators.pattern(/\d+$/g)]],
-        state: ['',[Validators.required, Validators.minLength(2), Validators.pattern(/\d+$/g)]],
+        headQuarters: ['',[Validators.required, Validators.minLength(2)]],
+        state: ['',[Validators.required, Validators.minLength(2)]],
         pinCode: ['',[Validators.required, Validators.minLength(6), Validators.maxLength(6), Validators.pattern(/^\d+(\.\d{1,2})?$/)]],
-        chiefName: ['',[Validators.required, Validators.minLength(2), Validators.pattern(/\d+$/g)]],
+        chiefName: ['',[Validators.required, Validators.minLength(2)]],
         companyEmail: ['',[Validators.required, Validators.minLength(3), Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g)]],
-        managerName: ['',[Validators.required, Validators.minLength(2), Validators.pattern(/\d+$/g)]],
+        managerName: ['',[Validators.required, Validators.minLength(2)]],
         managerNo: ['',[Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern(/^\d+(\.\d{1,2})?$/)]],
         managerEmail: ['',[Validators.required, Validators.minLength(3), Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g)]]
       }

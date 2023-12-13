@@ -5,3 +5,14 @@ body{
     overflow-y: scroll;
     margin: 50px;
 }
+li{
+    float: left;
+    margin: 5px;
+}
+ul{
+    list-style-type: none;
+}
+li a{
+    text-decoration: none;
+    color: black;
+}

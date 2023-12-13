@@ -23,8 +23,8 @@ export class MeetingsService {
     return this.meetings;
    }
 
-   addMeeting = (name: string, mt: string, date: string, time: string, jurl:string, mo: string):void => {
-    let new_meeting: Meetings = new Meetings(name, mt, date, time, jurl, mo);
+   addMeeting = (name: string, mt: string, date: string, time: string):void => {
+    let new_meeting: Meetings = new Meetings(name, mt, date, time, "", "Yet to Start");
     this.meetings.push(new_meeting);
    }
 }
