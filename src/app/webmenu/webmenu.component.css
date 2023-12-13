@@ -1,0 +1,34 @@
+li{
+    float: left;
+  }
+  .menualign{
+    float: left;
+    margin-bottom: 30%;
+  }
+  button a{
+    text-decoration: none;
+  }
+  .dropdown{
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown-content{
+    background-color: aquamarine;
+    display: none;
+    min-width: fit-content;
+
+  }
+  .dropdown-content a{
+    text-decoration: none;
+    color: black;
+  }
+  .dropdown-content a:hover{
+    background-color: gold;
+  }
+  .dropdown:hover .dropdown-content{
+    display: block;
+  }
+  .list{
+    margin: 5px;
+    background-color: goldenrod;
+  }

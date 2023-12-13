@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            h2{
+                text-align: center;
+            }
+            body{
+                background-color: blanchedalmond;
+            }
+             button{
+                background-color: gainsboro;
+            }
+            button a{
+                text-decoration: none;
+                color: black;
+            }
+            button a:hover{
+                background-color: cadetblue;
+            }
+            li{
+                float: left;
+            }
+            .dropdown{
+                position: relative;
+                display: inline-block;
+            }
+            .dropdown-content{
+                background-color: gainsboro;
+                display: none;
+                min-width: fit-content;
+            }
+            .dropdown-content a{
+                text-decoration: none;
+                color: black;
+            }
+            .dropdown-content a:hover{
+                background-color: chocolate;
+            }
+            .dropdown:hover .dropdown-content{ display: block;}
+            form{
+                margin-top: 15px;
+            }
+            form label{
+                margin:10px;
+            }
+            form input{
+                margin:10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Anna Architecture Limited</h1>
+        <h2><em>Building Today To Guarentee You a Better Tomorrow</em></h2>
+        <ul style="list-style-type: none;">
+            <li>
+                <button>
+                    <a href="client.html">Home</a>
+                </button>
+            </li>
+            <li>
+                <button>
+                    <a href="">About</a>
+                </button>
+            </li>
+            <li class="dropdown">
+                <button>
+                    <a href="">client</a>
+                </button>
+                <div class="dropdown-content">
+                    <a href="create-client.html">Create client</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <button>
+                    <a href="">Meetings</a>
+                </button>
+                <div class="dropdown-content">
+                    <a href="Meetings.html">Schedule Meeting</a>
+                </div>
+            </li>
+        </ul>
+        <br>
+        <form [formGroup]="clientForm">
+            <div class="form-group">
+                <label for="clientName">Client Name</label>
+                <input id="clientName" formControlName="clientName" required>
+                <div *ngIf="clientForm.get('clientName')?.hasError('required')" class="error-message">Please Enter Valid Client Name</div>
+                <div *ngIf="clientForm.get('clientName')?.hasError('minLength')" class="error-message">Please Enter Valid Client Name</div>
+                <div *ngIf="clientForm.get('clientName')?.hasError('pattern')" class="error-message">Please Enter Valid Client Name</div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="operatingSectors">Area Of Operation</label>
+                <textarea id="operatingSectors" formControlName="operatingSectors" rows="4" cols="40" id="os" required>
+                    <div *ngIf="clientForm.get('operatingSectors')?.hasError('required')" class="error-message">Please Select Valid Area Of Operation</div>
+                </textarea>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="headQuarters">Place Of Headquarters</label>
+                <input type="text"  placeholder="Enter place" id="headQuarters" formControlName="headQuarters" required>
+                <div *ngIf="clientForm.get('headQuarters')?.hasError('required')" class="error-message">Please Enter Valid Place Name</div>
+                <div *ngIf="clientForm.get('headQuarters')?.hasError('minLength')" class="error-message">Please Enter Valid Place Name</div>
+                <div *ngIf="clientForm.get('headQuarters')?.hasError('pattern')" class="error-message">Please Enter Valid Place Name</div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="state">State</label>
+                <input type="text" placeholder="Enter State" id="state" formControlName="state" required>
+                <div *ngIf="clientForm.get('state')?.hasError('required')" class="error-message">Please Enter Valid State Name</div>
+                <div *ngIf="clientForm.get('state')?.hasError('minLength')" class="error-message">Please Enter Valid State Name</div>
+                <div *ngIf="clientForm.get('state')?.hasError('pattern')" class="error-message">Please Enter Valid State Name</div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="pinCode">pincode</label>
+                <input type="number" placeholder="999999" id="pinCode" formControlName="pinCode" required>
+                <div *ngIf="clientForm.get('pinCode')?.hasError('required')" class="error-message">Please Enter Valid Pincode</div>
+                <div *ngIf="clientForm.get('pinCode')?.hasError('minLength')" class="error-message">Please Enter Valid Pincode</div>
+                <div *ngIf="clientForm.get('pinCode')?.hasError('maxLength')" class="error-message">Please Enter Valid Pincode</div>
+                <div *ngIf="clientForm.get('pinCode')?.hasError('pattern')" class="error-message">Please Enter Valid Pincode</div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="chiefName">Company Chief</label>
+                <input type="text" placeholder="Enter Executive director name" id="chiefName" formControlName="chiefName" required>
+                <div *ngIf="clientForm.get('chiefName')?.hasError('required')" class="error-message">Please Enter Valid Name</div>
+                <div *ngIf="clientForm.get('chiefName')?.hasError('minLength')" class="error-message">Please Enter Valid Name</div>
+                <div *ngIf="clientForm.get('pattern')?.hasError('required')" class="error-message">Please Enter Valid Name</div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="companyEmail">company Email</label>
+                <input type="text" placeholder="Enter company email" id="companyEmail" formControlName="companyEmail" required>
+                <div *ngIf="clientForm.get('companyEmail')?.hasError('required')" class="error-message">Please Enter Valid Email Address</div>
+                <div *ngIf="clientForm.get('companyEmail')?.hasError('minLength')" class="error-message">Please Enter Valid Email Address</div>
+                <div *ngIf="clientForm.get('companyEmail')?.hasError('pattern')" class="error-message">Please Enter Valid Email Address</div>
+            </div>
+            <hr>
+            <h3>Client Manager Details</h3>
+            <div class="form-group">
+                <label for="managerName">client manager Name</label>
+                <input type="text" placeholder="Enter manager name" id="managerName" formControlName="managerName" required>
+                <div *ngIf="clientForm.get('managerName')?.hasError('required')" class="error-message">Please Enter Valid Name</div>
+                <div *ngIf="clientForm.get('managerName')?.hasError('minLength')" class="error-message">Please Enter Valid Name</div>
+                <div *ngIf="clientForm.get('managerName')?.hasError('pattern')" class="error-message">Please Enter Valid Name</div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="managerNo">Contact Number</label>
+                <input type="number" placeholder="Enter Contact number" id="managerNo" formControlName="managerNo" required>
+                <div *ngIf="clientForm.get('managerNo')?.hasError('required')" class="error-message">Please Enter Valid Contact Number</div>
+                <div *ngIf="clientForm.get('managerNo')?.hasError('minLength')" class="error-message">Please Enter Valid Contact Number</div>
+                <div *ngIf="clientForm.get('managerNo')?.hasError('maxLength')" class="error-message">Please Enter Valid Contact Number</div>
+                <div *ngIf="clientForm.get('managerNo')?.hasError('pattern')" class="error-message">Please Enter Valid Contact Number</div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="managerEmail">Manager Email</label>
+                <input type="text" id="managerEmail" formControlName="managerEmail" placeholder="Enter Manager's email" required>
+                <div *ngIf="clientForm.get('managerEmail')?.hasError('required')" class="error-message">Please Enter Valid Email Address</div>
+                <div *ngIf="clientForm.get('managerEmail')?.hasError('minLength')" class="error-message">Please Enter Valid Email Address</div>
+                <div *ngIf="clientForm.get('managerEmail')?.hasError('pattern')" class="error-message">Please Enter Valid Email Address</div>
+            </div>
+            <br>
+            <br>
+            
+                <button (click)="addClient()" [disabled]="clientForm.invalid" class="btn btn-primary">Submit</button>
+        </form>
+    </body>
+</html>
+<p>client works!</p>

@@ -1,0 +1,7 @@
+*{
+    background-color: darkseagreen;
+}
+body{
+    overflow-y: scroll;
+    margin: 50px;
+}

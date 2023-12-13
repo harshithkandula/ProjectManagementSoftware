@@ -1,0 +1,23 @@
+<hr>
+<h1>Client Management</h1>
+<button>
+    <a href="client\client.component.html">Create Client</a>
+</button>
+<table style="margin-top: 50px;">
+    <tr>
+        <th>Client ID</th>
+        <th>Client Name</th>
+        <th>Client Manager Name</th>
+        <th>Manager Contact</th>
+        <th>Manager Email</th>
+        <th>Status Information</th>
+    </tr>
+    <tr *ngFor="let clien of client; index as i">
+        <td>{{i + 1}}</td>
+        <td>{{clien.name}}</td>
+        <td>{{clien.cm_name}}</td>
+        <td>{{clien.ctnumber}}</td>
+        <td>{{clien.cm_email}}</td>
+        <td><a href={{clien.url}}>View</a></td>
+    </tr>
+</table>

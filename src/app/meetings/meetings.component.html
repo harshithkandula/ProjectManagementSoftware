@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            h2{
+                text-align: center;
+            }
+            body{
+                background-color: darkcyan;
+            }
+            button{
+                background-color: gainsboro;
+            }
+            button a{
+                text-decoration: none;
+                color: black;
+            }
+            button a:hover{
+                background-color: cadetblue;
+            }
+            li{
+                float: left;
+            }
+            .dropdown{
+                position: relative;
+                display: inline-block;
+            }
+            .dropdown-content{
+                background-color: gainsboro;
+                display: none;
+                min-width: fit-content;
+            }
+            .dropdown-content a{
+                text-decoration: none;
+                color: black;
+            }
+            .dropdown-content a:hover{
+                background-color: chocolate;
+            }
+            .dropdown:hover .dropdown-content{ display: block;}
+            ul{
+                margin-bottom: 15px;
+            }
+            form{
+                margin:10px;
+            }
+            form label{
+                margin: 15px;
+            }
+            form input{
+                margin: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Anna Architecture Limited</h1>
+        <h2><em>Building Today To Guarentee You a Better Tomorrow</em></h2>
+        <br>
+        <ul style="list-style-type: none;">
+            <li>
+                <button>
+                    <a href="client.html">Home</a>
+                </button>
+            </li>
+            <li>
+                <button>
+                    <a href="">About</a>
+                </button>
+            </li>
+            <li class="dropdown">
+                <button>
+                    <a href="">client</a>
+                </button>
+                <div class="dropdown-content">
+                    <a href="create-client.html">create client</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <button>
+                    <a href="">Meetings</a>
+                </button>
+                <div class="dropdown-content">
+                    <a href="Meetings.html">Schedule Meeting</a>
+                </div>
+            </li>
+        </ul>
+        
+        <br>
+        <form [formGroup]="meetingForm">
+            <div class="form-group">
+                <label for="clientName">Client Name</label>
+                <input type="text" id="clientName" placeholder="Enter client name" formControlName="clientName" required>
+                <div *ngIf="meetingForm.get('clientName')?.hasError('required')" class="error-message">Please Enter Valid Client Name</div>
+                <div *ngIf="meetingForm.get('clientName')?.hasError('minLength')" class="error-message">Please Enter Valid Client Name</div>
+                <div *ngIf="meetingForm.get('pattern')?.hasError('required')" class="error-message">Please Enter Valid Client Name</div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="meetingType">Meeting Type</label>
+                 <select id="meetingType" formControlName="meetingType" required="">
+                       <option value="Project planning meeting">Project Planning Meeting</option>
+                       <option value="Sprint planning meeting">Sprint Planning Meeting</option>
+                       <option value="Sprint review meeting">Sprint Review Meeting</option>
+                       <option value="Sprint retrospective meeting">Sprint Retrospective Meeting</option>
+                       <option value="Project review meeting">Project Review Meeting</option>
+                       <option value="others">Other</option>
+                 </select>
+                 <div *ngIf="meetingForm.get('meetingType')?.hasError('required')" class="error-message">Please Select Meeting Type</div>
+            </div>
+            <label>If Other</label>
+            <textarea name="meeting type" rows="3" cols="10"></textarea>
+            <hr>
+            <div class="form-group">
+                <label for="date">Date</label>
+                <input type="date" id="date" formControlName="date" placeholder="Select date" required>
+                <div *ngIf="meetingForm.get('date')?.hasError('required')" class="error-message">Please Select Date</div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="time">Time</label>
+                <input type="time" id="time" formControlName="time" placeholder="Select time" required>
+                <div *ngIf="meetingForm.get('time')?.hasError('required')" class="error-message">Please Select Time</div>
+            </div>
+            <hr>
+            <div class="form-group">
+                <label for="NoMp">Meetings Participants</label>
+                <input type="number" id="NoMp" formControlName="NoMp" placeholder="Enter No. Of Participants">
+                <div *ngIf="meetingForm.get('NoMp')?.hasError('required')" class="error-message">Please Enter No Of Participants</div>
+                <div *ngIf="meetingForm.get('NoMp')?.hasError('pattern')" class="error-message">Please Enter No Of Participants</div>
+                <div *ngIf="meetingForm.get('NoMp')?.hasError('maxLength')" class="error-message">Please Enter No Of Participants</div>
+            </div>
+            <br>
+            <button (click)="addMeeting()" [disabled]="meetingForm.invalid" class="btn btn-primary">Schedule Meeting</button>
+        </form>
+        
+    </body>
+</html>
+<p>meetings works!</p>
