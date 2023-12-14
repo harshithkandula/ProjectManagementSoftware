@@ -23,4 +23,8 @@ export class ClientmanagementComponent {
   ngOnInit(): void {
     this.client=this.clientService.getAllClients();
   }
+
+  delClient():void{
+    this.clientService.delClient();
+  }
 }

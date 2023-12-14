@@ -11,6 +11,7 @@
         <th>Manager Contact</th>
         <th>Manager Email</th>
         <th>Status Information</th>
+        <th>Cancel Meeting</th>
     </tr>
     <tr *ngFor="let clien of client; index as i">
         <td>{{i + 1}}</td>
@@ -19,5 +20,6 @@
         <td>{{clien.ctnumber}}</td>
         <td>{{clien.cm_email}}</td>
         <td><a href={{clien.url}}>View</a></td>
+        <td><a (click)="delClient()">Cancel</a></td>
     </tr>
 </table>

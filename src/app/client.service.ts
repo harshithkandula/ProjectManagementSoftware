@@ -28,4 +28,8 @@ export class ClientService {
     let new_client: Client = new Client(this.clients.length+1, name, mname, mno,mmail, "");
     this.clients.push(new_client);
   }
+
+  delClient = ():void => {
+    this.clients.pop();
+  }
 }
