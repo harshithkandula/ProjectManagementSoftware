@@ -10,7 +10,30 @@
 
 
 <main class="main">
+
   <div>
+    <h1>Anna Architecture Limited</h1>
+    <sub>Constructing today tomorrow</sub>
+  </div>
+  
+  <ul class="horizontal-nav">
+    <li>
+      <button><a [routerLink]="['/home']">Home</a></button>
+    </li>
+    <li>
+      <button><a [routerLink]="['/ClientsList']">Clients List</a></button>
+    </li>
+    <li>
+      <button><a [routerLink]="['/AddClient']">Add Client</a></button>
+    </li>
+    <li>
+      <button><a [routerLink]="['/MeetingsList']">Meetings List</a></button>
+    </li>
+    <li>
+      <button><a [routerLink]="['/AddMeetings']">Add Meetings</a></button>
+    </li>
+  </ul>
+  <!--<div>
     <app-webmenu></app-webmenu>
   </div>
   <div>
@@ -24,7 +47,7 @@
   </div>
   <div style="margin: 100px;">
     <app-meetingsmanagement></app-meetingsmanagement>
-  </div>
+  </div>-->
   
 
 </main>

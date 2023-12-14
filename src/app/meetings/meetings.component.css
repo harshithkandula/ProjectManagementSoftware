@@ -1,0 +1,48 @@
+h2{
+    text-align: center;
+}
+body{
+    background-color: darkcyan;
+}
+button{
+    background-color: gainsboro;
+}
+button a{
+    text-decoration: none;
+    color: black;
+}
+button a:hover{
+    background-color: cadetblue;
+}
+li{
+    float: left;
+}
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content{
+    background-color: gainsboro;
+    display: none;
+    min-width: fit-content;
+}
+.dropdown-content a{
+    text-decoration: none;
+    color: black;
+}
+.dropdown-content a:hover{
+    background-color: chocolate;
+}
+.dropdown:hover .dropdown-content{ display: block;}
+ul{
+    margin-bottom: 15px;
+}
+form{
+    margin:40px;
+}
+form label{
+    margin: 15px;
+}
+form input{
+    margin: 15px;
+}

@@ -29,6 +29,6 @@ li{
     display: block;
   }
   .list{
-    margin: 5px;
-    background-color: goldenrod;
+    margin: 15px;
+    float: left;
   }

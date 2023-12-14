@@ -4,9 +4,10 @@ import { ClientmanagementComponent } from './clientmanagement/clientmanagement.c
 import { ClientComponent } from './client/client.component';
 import { MeetingsmanagementComponent } from './meetingsmanagement/meetingsmanagement.component';
 import { MeetingsComponent } from './meetings/meetings.component';
+import { WebmenuComponent } from './webmenu/webmenu.component';
 
 export const routes: Routes = [
-    {path: 'home', component: AppComponent},
+    {path: 'home', component: WebmenuComponent},
     {path: 'ClientsList', component: ClientmanagementComponent},
     {path: 'AddClient', component: ClientComponent},
     {path: 'MeetingsList', component: MeetingsmanagementComponent},

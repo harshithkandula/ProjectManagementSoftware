@@ -1,86 +1,5 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <style>
-            h2{
-                text-align: center;
-            }
-            body{
-                background-color: blanchedalmond;
-            }
-             button{
-                background-color: gainsboro;
-            }
-            button a{
-                text-decoration: none;
-                color: black;
-            }
-            button a:hover{
-                background-color: cadetblue;
-            }
-            li{
-                float: left;
-            }
-            .dropdown{
-                position: relative;
-                display: inline-block;
-            }
-            .dropdown-content{
-                background-color: gainsboro;
-                display: none;
-                min-width: fit-content;
-            }
-            .dropdown-content a{
-                text-decoration: none;
-                color: black;
-            }
-            .dropdown-content a:hover{
-                background-color: chocolate;
-            }
-            .dropdown:hover .dropdown-content{ display: block;}
-            form{
-                margin-top: 15px;
-            }
-            form label{
-                margin:10px;
-            }
-            form input{
-                margin:10px;
-            }
-        </style>
-    </head>
-    <body>
-        <h1>Anna Architecture Limited</h1>
-        <h2><em>Building Today To Guarentee You a Better Tomorrow</em></h2>
-        <ul style="list-style-type: none;">
-            <li>
-                <button>
-                    <a href="client.html">Home</a>
-                </button>
-            </li>
-            <li>
-                <button>
-                    <a href="">About</a>
-                </button>
-            </li>
-            <li class="dropdown">
-                <button>
-                    <a href="">client</a>
-                </button>
-                <div class="dropdown-content">
-                    <a href="create-client.html">Create client</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <button>
-                    <a href="">Meetings</a>
-                </button>
-                <div class="dropdown-content">
-                    <a href="Meetings.html">Schedule Meeting</a>
-                </div>
-            </li>
-        </ul>
-        <br>
+<body>
         <form [formGroup]="clientForm">
             <div class="form-group">
                 <label for="clientName">Client Name</label>
@@ -165,5 +84,5 @@
                 <button (click)="addClient()" [disabled]="clientForm.invalid" class="btn btn-primary">Submit</button>
         </form>
     </body>
-</html>
-<p>client works!</p>
+
+

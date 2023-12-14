@@ -9,4 +9,7 @@ import { Component } from '@angular/core';
 })
 export class WebmenuComponent {
 
+  prl: string = "E:\Simplilearn\Angular Framework\images.jpg";
+  
+
 }

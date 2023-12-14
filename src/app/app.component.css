@@ -5,3 +5,13 @@ body{
     overflow-y: scroll;
     margin: 50px;
 }
+ul{
+    list-style-type: none;
+}
+li{
+    float: left;
+}
+li button a{
+    text-decoration: none;
+    color: black;
+}

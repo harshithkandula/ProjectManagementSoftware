@@ -1,91 +1,6 @@
-<!DOCTYPE html>
+
 <html>
-    <head>
-        <style>
-            h2{
-                text-align: center;
-            }
-            body{
-                background-color: darkcyan;
-            }
-            button{
-                background-color: gainsboro;
-            }
-            button a{
-                text-decoration: none;
-                color: black;
-            }
-            button a:hover{
-                background-color: cadetblue;
-            }
-            li{
-                float: left;
-            }
-            .dropdown{
-                position: relative;
-                display: inline-block;
-            }
-            .dropdown-content{
-                background-color: gainsboro;
-                display: none;
-                min-width: fit-content;
-            }
-            .dropdown-content a{
-                text-decoration: none;
-                color: black;
-            }
-            .dropdown-content a:hover{
-                background-color: chocolate;
-            }
-            .dropdown:hover .dropdown-content{ display: block;}
-            ul{
-                margin-bottom: 15px;
-            }
-            form{
-                margin:10px;
-            }
-            form label{
-                margin: 15px;
-            }
-            form input{
-                margin: 15px;
-            }
-        </style>
-    </head>
     <body>
-        <h1>Anna Architecture Limited</h1>
-        <h2><em>Building Today To Guarentee You a Better Tomorrow</em></h2>
-        <br>
-        <ul style="list-style-type: none;">
-            <li>
-                <button>
-                    <a href="client.html">Home</a>
-                </button>
-            </li>
-            <li>
-                <button>
-                    <a href="">About</a>
-                </button>
-            </li>
-            <li class="dropdown">
-                <button>
-                    <a href="">client</a>
-                </button>
-                <div class="dropdown-content">
-                    <a href="create-client.html">create client</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <button>
-                    <a href="">Meetings</a>
-                </button>
-                <div class="dropdown-content">
-                    <a href="Meetings.html">Schedule Meeting</a>
-                </div>
-            </li>
-        </ul>
-        
-        <br>
         <form [formGroup]="meetingForm">
             <div class="form-group">
                 <label for="clientName">Client Name</label>
@@ -135,4 +50,5 @@
         
     </body>
 </html>
-<p>meetings works!</p>
+
+
