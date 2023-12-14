@@ -102,7 +102,6 @@
                 <input type="text"  placeholder="Enter place" id="headQuarters" formControlName="headQuarters" required>
                 <div *ngIf="clientForm.get('headQuarters')?.hasError('required')" class="error-message">Please Enter Valid Place Name</div>
                 <div *ngIf="clientForm.get('headQuarters')?.hasError('minLength')" class="error-message">Please Enter Valid Place Name</div>
-                <div *ngIf="clientForm.get('headQuarters')?.hasError('pattern')" class="error-message">Please Enter Valid Place Name</div>
             </div>
             <br>
             <div class="form-group">
@@ -110,7 +109,6 @@
                 <input type="text" placeholder="Enter State" id="state" formControlName="state" required>
                 <div *ngIf="clientForm.get('state')?.hasError('required')" class="error-message">Please Enter Valid State Name</div>
                 <div *ngIf="clientForm.get('state')?.hasError('minLength')" class="error-message">Please Enter Valid State Name</div>
-                <div *ngIf="clientForm.get('state')?.hasError('pattern')" class="error-message">Please Enter Valid State Name</div>
             </div>
             <br>
             <div class="form-group">
@@ -127,7 +125,6 @@
                 <input type="text" placeholder="Enter Executive director name" id="chiefName" formControlName="chiefName" required>
                 <div *ngIf="clientForm.get('chiefName')?.hasError('required')" class="error-message">Please Enter Valid Name</div>
                 <div *ngIf="clientForm.get('chiefName')?.hasError('minLength')" class="error-message">Please Enter Valid Name</div>
-                <div *ngIf="clientForm.get('pattern')?.hasError('required')" class="error-message">Please Enter Valid Name</div>
             </div>
             <br>
             <div class="form-group">
@@ -144,7 +141,6 @@
                 <input type="text" placeholder="Enter manager name" id="managerName" formControlName="managerName" required>
                 <div *ngIf="clientForm.get('managerName')?.hasError('required')" class="error-message">Please Enter Valid Name</div>
                 <div *ngIf="clientForm.get('managerName')?.hasError('minLength')" class="error-message">Please Enter Valid Name</div>
-                <div *ngIf="clientForm.get('managerName')?.hasError('pattern')" class="error-message">Please Enter Valid Name</div>
             </div>
             <br>
             <div class="form-group">
