@@ -20,7 +20,7 @@ export class ClientComponent {
   constructor(private fb:FormBuilder, clientService: ClientService){
     this.clientForm=this.fb.group(
       {
-        clientName: ['',[Validators.required, Validators.minLength(2), Validators.pattern(/\d+$/g)]],
+        clientName: ['',[Validators.required, Validators.minLength(2)]],
         operatingSectors: ['',[Validators.required]],
         headQuarters: ['',[Validators.required, Validators.minLength(2)]],
         state: ['',[Validators.required, Validators.minLength(2)]],
@@ -29,7 +29,9 @@ export class ClientComponent {
         companyEmail: ['',[Validators.required, Validators.minLength(3), Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g)]],
         managerName: ['',[Validators.required, Validators.minLength(2)]],
         managerNo: ['',[Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern(/^\d+(\.\d{1,2})?$/)]],
-        managerEmail: ['',[Validators.required, Validators.minLength(3), Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g)]]
+        managerEmail: ['',[Validators.required, Validators.minLength(3), Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g)]],
+        password: ['',[Validators.required, Validators.minLength(8), Validators.maxLength(20), Validators.pattern(/^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d).{8,}$/)]],
+        confirmpassword: ['',[Validators.required, Validators.minLength(8), Validators.maxLength(20), Validators.pattern(/^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d).{8,}$/)]]
       }
     );
     this.clientService=clientService;

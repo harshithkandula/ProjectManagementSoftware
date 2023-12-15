@@ -21,4 +21,8 @@ export class MeetingsmanagementComponent {
   ngOnInit(): void {
     this.meetings=this.meetingService.getAllMeetings();
   }
+
+  cancelMeeting():void{
+    this.meetingService.cancelMeeting();
+  }
 }

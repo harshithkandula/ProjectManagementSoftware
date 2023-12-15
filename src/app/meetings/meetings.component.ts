@@ -26,11 +26,12 @@ export class MeetingsComponent {
   constructor(private fb: FormBuilder, meetingsService: MeetingsService){
     this.meetingForm=this.fb.group(
       {
-        clientName: ['',[Validators.required, Validators.minLength(2), Validators.pattern(/\d+$/g)]],
+        clientName: ['',[Validators.required, Validators.minLength(2)]],
         meetingType: ['',[Validators.required]],
         date: ['',[Validators.required]],
         time: ['',[Validators.required]],
-        NoMp: ['',[Validators.required, Validators.pattern(/^\d+(\.\d{1,2})?$/), Validators.maxLength(2)]]
+        NoMp: ['',[Validators.required, Validators.pattern(/^\d+(\.\d{1,2})?$/), Validators.maxLength(2)]],
+        Ap: ['',[Validators.required]]
       }
     );
     this.meetingsService=meetingsService;

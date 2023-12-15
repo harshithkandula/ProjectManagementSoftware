@@ -7,12 +7,12 @@
                 <input type="text" id="clientName" placeholder="Enter client name" formControlName="clientName" required>
                 <div *ngIf="meetingForm.get('clientName')?.hasError('required')" class="error-message">Please Enter Valid Client Name</div>
                 <div *ngIf="meetingForm.get('clientName')?.hasError('minLength')" class="error-message">Please Enter Valid Client Name</div>
-                <div *ngIf="meetingForm.get('clientName')?.hasError('required')" class="error-message">Please Enter Valid Client Name</div>
             </div>
             <br>
             <div class="form-group">
                 <label for="meetingType">Meeting Type</label>
                  <select id="meetingType" formControlName="meetingType" required="">
+                       <option value="daily scrum">Daily Scrum</option>
                        <option value="Project planning meeting">Project Planning Meeting</option>
                        <option value="Sprint planning meeting">Sprint Planning Meeting</option>
                        <option value="Sprint review meeting">Sprint Review Meeting</option>
@@ -43,6 +43,26 @@
                 <div *ngIf="meetingForm.get('NoMp')?.hasError('required')" class="error-message">Please Enter No Of Participants</div>
                 <div *ngIf="meetingForm.get('NoMp')?.hasError('pattern')" class="error-message">Please Enter No Of Participants</div>
                 <div *ngIf="meetingForm.get('NoMp')?.hasError('maxLength')" class="error-message">Please Enter No Of Participants</div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="Ap">Add Meeting Participants</label>
+                <select id="Ap" formControlName="Ap" multiple required>
+                    <option value="productlead">Product Lead</option>
+                    <option value="teamleader">Team Leader</option>
+                    <option value="scrummaster">Scrum Master</option>
+                    <option value="teammember1">Team member-1</option>
+                    <option value="teammember2">Team member-2</option>
+                    <option value="teammember3">Team member-3</option>
+                    <option value="teammember4">Team member-4</option>
+                    <option value="teammember5">Team member-5</option>
+                    <option value="teammember6">Team member-6</option>
+                    <option value="teammember7">Team member-7</option>
+                    <option value="teammember8">Team member-8</option>
+                    <option value="teammember9">Team member-9</option>
+                    <option value="teammember10">Team member-10</option>
+                </select>
+                <div *ngIf="meetingForm.get('Ap')?.hasError('required')" class="error-message">Please select Meetings Participants</div>
             </div>
             <br>
             <button (click)="addMeeting()" [disabled]="meetingForm.invalid" class="btn btn-primary">Schedule Meeting</button>
