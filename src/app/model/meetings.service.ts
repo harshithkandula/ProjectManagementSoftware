@@ -27,4 +27,8 @@ export class MeetingsService {
     let new_meeting: Meetings = new Meetings(name, mt, date, time, "", "Yet to Start");
     this.meetings.push(new_meeting);
    }
+
+   delMeetings = ():void => {
+    this.meetings.pop();
+   }
 }

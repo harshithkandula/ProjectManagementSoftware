@@ -21,4 +21,8 @@ export class MeetingsmanagementComponent {
   ngOnInit(): void {
     this.meetings=this.meetingService.getAllMeetings();
   }
+
+  delMeetings():void{
+    this.meetingService.delMeetings();
+  }
 }

@@ -29,7 +29,9 @@ export class ClientComponent {
         companyEmail: ['',[Validators.required, Validators.minLength(3), Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g)]],
         managerName: ['',[Validators.required, Validators.minLength(2)]],
         managerNo: ['',[Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern(/^\d+(\.\d{1,2})?$/)]],
-        managerEmail: ['',[Validators.required, Validators.minLength(3), Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g)]]
+        managerEmail: ['',[Validators.required, Validators.minLength(3), Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g)]],
+        password: ['',[Validators.required, Validators.minLength(8), Validators.maxLength(20), Validators.pattern(/^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d).{8,}$/)]],
+        confirmpassword: ['',[Validators.required, Validators.minLength(8), Validators.maxLength(20), Validators.pattern(/^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d).{8,}$/)]]
       }
     );
     this.clientService=clientService;

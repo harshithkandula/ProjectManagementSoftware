@@ -160,6 +160,23 @@
                 <div *ngIf="clientForm.get('managerEmail')?.hasError('pattern')" class="error-message">Please Enter Valid Email Address</div>
             </div>
             <br>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" formControlName="password" placeholder="Enter Password" required>
+                <div *ngIf="clientForm.get('password')?.hasError('required')" class="error-message">Please Enter Valid Password</div>
+                <div *ngIf="clientForm.get('password')?.hasError('minLength')" class="error-message">Please Enter Valid Password</div>
+                <div *ngIf="clientForm.get('password')?.hasError('maxLength')" class="error-message">Please Enter Valid Password</div>
+                <div *ngIf="clientForm.get('password')?.hasError('pattern')" class="error-message">Please Enter Valid Password</div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="confirmpassword">Confirm Password</label>
+                <input type="password" id="confirmpassword" formControlName="confirmpassword" placeholder="confirmpassword" required>
+                <div *ngIf="clientForm.get('confirmpassword')?.hasError('required')" class="error-message">Please Enter Valid Password</div>
+                <div *ngIf="clientForm.get('confirmpassword')?.hasError('minLength')" class="error-message">Please Enter Valid Password</div>
+                <div *ngIf="clientForm.get('confirmpassword')?.hasError('maxLength')" class="error-message">Please Enter Valid Password</div>
+                <div *ngIf="clientForm.get('confirmpassword')?.hasError('pattern')" class="error-message">Please Enter Valid Password</div>
+            </div>
             <br>
             
                 <button (click)="addClient()" [disabled]="clientForm.invalid" class="btn btn-primary">Submit</button>

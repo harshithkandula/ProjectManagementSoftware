@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Client } from './client';
+import { AbstractControl, ValidationErrors } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +31,13 @@ export class ClientService {
   }
 
   delClient = ():void => {
+    
     this.clients.pop();
   }
+
+  ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
+    return control.value.password1 === control.value.password2
+      ? null
+      : { PasswordNoMatch: true };
+  };
 }
