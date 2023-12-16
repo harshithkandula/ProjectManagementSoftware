@@ -177,6 +177,9 @@
                 <div *ngIf="clientForm.get('confirmpassword')?.hasError('maxLength')" class="error-message">Please Enter Valid Password</div>
                 <div *ngIf="clientForm.get('confirmpassword')?.hasError('pattern')" class="error-message">Please Enter Valid Password</div>
             </div>
+            <div class="form-group">
+                <div *ngIf="clientForm.errors?.['passwordmatcherror']" class="error-message">Password Mismatch</div>
+            </div>
             <br>
             
                 <button (click)="addClient()" [disabled]="clientForm.invalid" class="btn btn-primary">Submit</button>
