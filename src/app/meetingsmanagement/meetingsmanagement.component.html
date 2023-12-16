@@ -11,6 +11,7 @@
         <th>Time</th>
         <th>Join</th>
         <th>Outcome</th>
+        <th>Cancel</th>
     </tr>
     <tr *ngFor="let meet of meetings">
         <td>{{meet.name}}</td>
@@ -19,5 +20,6 @@
         <td>{{meet.time}}</td>
         <td><a href={{meet.joinurl}}>Click Here</a></td>
         <td>{{meet.mo}}</td>
+        <td><button (click)="cancelMeeting()">Click to Cancel</button></td>
     </tr>
 </table>
