@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Client } from '../client';
 import { ClientService } from '../client.service';
+import { matchpassword } from '../matchpassword.validator';
 
 @Component({
   selector: 'app-client',
@@ -32,6 +33,9 @@ export class ClientComponent {
         managerEmail: ['',[Validators.required, Validators.minLength(3), Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g)]],
         password: ['',[Validators.required, Validators.minLength(8), Validators.maxLength(20), Validators.pattern(/^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d).{8,}$/)]],
         confirmpassword: ['',[Validators.required, Validators.minLength(8), Validators.maxLength(20), Validators.pattern(/^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d).{8,}$/)]]
+      },
+      {
+        Validators: matchpassword
       }
     );
     this.clientService=clientService;
