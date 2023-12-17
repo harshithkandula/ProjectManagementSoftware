@@ -5,6 +5,7 @@
 </button>
 <table style="margin-top: 50px;">
     <tr>
+        <th>Id</th>
         <th>Client Name</th>
         <th>Meeting Type</th>
         <th>Date</th>
@@ -14,6 +15,7 @@
         <th>Cancel Meeting</th>
     </tr>
     <tr *ngFor="let meet of meetings">
+        <td>{{meet.id}}</td>
         <td>{{meet.name}}</td>
         <td>{{meet.type}}</td>
         <td>{{meet.date}}</td>

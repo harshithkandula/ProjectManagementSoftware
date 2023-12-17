@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Meetings } from '../model/meetings';
 import { CommonModule } from '@angular/common';
 import { MeetingsService } from '../model/meetings.service';
@@ -22,7 +22,10 @@ export class MeetingsmanagementComponent {
     this.meetings=this.meetingService.getAllMeetings();
   }
 
+  @Input("xyz")
+  xyz!: string
+
   delMeetings():void{
-    this.meetingService.delMeetings();
+    this.meetingService.delMeetings(Number(this.xyz));
   }
 }
